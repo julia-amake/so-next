@@ -1,15 +1,8 @@
 'use client';
 
-import React, {
-  createContext,
-  ReactNode,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
-
-type Theme = 'light' | 'dark';
+import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { Theme } from '@/types/theme';
+import { THEME_LS_KEY } from '@/constants/localStorage';
 
 interface ThemeContextType {
   theme: Theme;
@@ -20,29 +13,40 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-const ThemeContext = createContext<ThemeContextType>();
+const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export const ThemeProvider = (props: ThemeProviderProps) => {
   const { children } = props;
 
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>();
 
-  const handleThemeChange = useCallback(() => {
-    switch (theme) {
-      case 'dark':
-        setTheme('dark');
-        document.documentElement.classList.add('dark');
-        break;
-      case 'light':
-      default:
-        setTheme('light');
-        document.documentElement.classList.add('light');
-    }
+  // set default theme
+  useEffect(() => {
+    if (theme) return;
+    setTheme((localStorage.getItem(THEME_LS_KEY) || 'light') as Theme);
   }, [theme]);
 
+  // set new theme
   useEffect(() => {
-    handleThemeChange();
-  }, [handleThemeChange]);
+    if (!theme) return;
+    localStorage.setItem(THEME_LS_KEY, theme);
+
+    const mode: Exclude<Theme, 'system'> =
+      theme === 'system'
+        ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light'
+        : theme;
+
+    if (mode === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.remove('light');
+    }
+    document.documentElement.classList.add(mode);
+  }, [theme]);
+
+  if (!theme) return null;
 
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
 };
