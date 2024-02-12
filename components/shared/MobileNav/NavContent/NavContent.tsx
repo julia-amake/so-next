@@ -17,7 +17,7 @@ const NavContent = () => {
       (pathname.includes(route) && route.length > 1) || pathname === route;
 
     return (
-      <SheetClose asChild key={label}>
+      <SheetClose asChild key={label} type={undefined}>
         <Link
           className={cn(
             'flex items-center justify-start gap-4 bg-transparent p-4',
