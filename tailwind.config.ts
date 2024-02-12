@@ -15,6 +15,10 @@ module.exports = {
         '2xl': '1400px',
       },
     },
+    borderWidth: {
+      '1': '1px',
+      '2': '2px',
+    },
     extend: {
       colors: {
         primary: {
