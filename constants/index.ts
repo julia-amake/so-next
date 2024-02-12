@@ -1,6 +1,6 @@
 import { ThemeSettings } from '@/types/theme';
 
-export const themes: ThemeSettings[] = [
+export const THEMES: ThemeSettings[] = [
   {
     value: 'light',
     label: 'Light',
