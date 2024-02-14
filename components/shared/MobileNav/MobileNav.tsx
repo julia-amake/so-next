@@ -9,9 +9,7 @@ import {
 } from '@/components/ui/sheet';
 import Image from 'next/image';
 import Link from 'next/link';
-import { SignedOut } from '@clerk/nextjs';
-import { Button } from '@/components/ui/button';
-import NavContent from '@/components/shared/MobileNav/NavContent/NavContent';
+import { SidebarLogin, SidebarMenu } from '@/components/shared/Sidebar';
 
 export const MobileNav = () => {
   return (
@@ -26,7 +24,7 @@ export const MobileNav = () => {
         />
       </SheetTrigger>
       <SheetContent
-        className="background-light900_dark200 border-none dark:text-light-900"
+        className="background-light900_dark200 flex flex-col border-none dark:text-light-900"
         side="left"
       >
         <SheetClose asChild type={undefined}>
@@ -42,32 +40,8 @@ export const MobileNav = () => {
             </div>
           </Link>
         </SheetClose>
-        <NavContent />
-        <SignedOut>
-          <div className="flex flex-col gap-3">
-            <SheetClose asChild>
-              <Button asChild>
-                <Link className="btn-secondary rounded-lg" href="/sign-in">
-                  <span className="primary-text-gradient small-medium">
-                    Login
-                  </span>
-                </Link>
-              </Button>
-            </SheetClose>
-            <SheetClose asChild type={undefined}>
-              <Button asChild>
-                <Link
-                  className="btn-tertiary light-border-2 rounded-lg"
-                  href="/sign-up"
-                >
-                  <span className="small-medium text-dark400_light900">
-                    Signup
-                  </span>
-                </Link>
-              </Button>
-            </SheetClose>
-          </div>
-        </SignedOut>
+        <SidebarMenu closable />
+        <SidebarLogin closable />
       </SheetContent>
     </Sheet>
   );
