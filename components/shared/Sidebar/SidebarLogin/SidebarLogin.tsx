@@ -16,6 +16,7 @@ export const SidebarLogin = ({ closable = false }: SidebarLoginProps) => {
             inner: 'primary-text-gradient',
           }}
           link="/sign-in"
+          icon="/assets/icons/account.svg"
           closable={closable}
         >
           Login
@@ -26,6 +27,7 @@ export const SidebarLogin = ({ closable = false }: SidebarLoginProps) => {
             inner: 'text-dark400_light900',
           }}
           link="/sign-un"
+          icon="/assets/icons/sign-up.svg"
           closable={closable}
         >
           Signup

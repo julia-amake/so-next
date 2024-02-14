@@ -41,7 +41,7 @@ export const SidebarMenu = (props: SidebarMenuProps) => {
           height={20}
         />
         <p
-          className={cn({
+          className={cn('max-lg:hidden', {
             'base-bold': isActive,
             'base-medium': !isActive,
           })}
