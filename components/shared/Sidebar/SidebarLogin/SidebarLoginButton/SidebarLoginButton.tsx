@@ -19,7 +19,7 @@ export const SidebarLoginButton = (props: SidebarLoginButtonProps) => {
     <Tag asChild>
       <Button asChild>
         <Link className={cn('rounded-lg', classNames?.outer)} href={link}>
-          <span className={cn('small-medium', classNames?.inner)}>
+          <span className={cn('small-medium font-semibold', classNames?.inner)}>
             {children}
           </span>
         </Link>

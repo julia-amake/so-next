@@ -53,7 +53,7 @@ export const SidebarMenu = (props: SidebarMenuProps) => {
   };
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-5">
       {SIDEBAR_LINKS.map((link) =>
         closable ? (
           <SheetClose asChild type={undefined} key={link.label}>
