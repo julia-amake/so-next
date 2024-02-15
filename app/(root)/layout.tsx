@@ -10,7 +10,7 @@ function BaseLayout(props: BaseLayoutProps) {
   const { children } = props;
 
   return (
-    <div className="background-light850_dark100 relative">
+    <div className="background-light850_dark100 text-dark200_light900 relative">
       <Navbar />
       <div className="flex">
         <Sidebar />
