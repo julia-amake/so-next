@@ -31,7 +31,7 @@ export const SidebarMenu = (props: SidebarMenuProps) => {
           },
         )}
         href={route}
-        {...(closable ? { key: label } : {})}
+        key={label}
       >
         <Image
           className={cn({ 'invert-colors': !isActive })}
