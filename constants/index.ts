@@ -56,3 +56,10 @@ export const SIDEBAR_LINKS: SidebarLink[] = [
     label: 'Ask a question',
   },
 ];
+
+export const QUESTIONS_FILTERS = [
+  { title: 'Newest', value: 'newest' },
+  { title: 'Recommended', value: 'recommended' },
+  { title: 'Frequent', value: 'frequent' },
+  { title: 'Unanswered', value: 'unanswered' },
+];
