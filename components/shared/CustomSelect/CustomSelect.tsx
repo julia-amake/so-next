@@ -53,7 +53,7 @@ export const CustomSelect = (props: SortByProps) => {
       </SelectTrigger>
       <SelectContent className={s.content}>
         {items.map(({ title, value }) => (
-          <SelectItem className="cursor-pointer" value={value} key={value}>
+          <SelectItem className={s.item} value={value} key={value}>
             {title}
           </SelectItem>
         ))}
