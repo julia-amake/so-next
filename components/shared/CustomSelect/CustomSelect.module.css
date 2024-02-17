@@ -1,6 +1,6 @@
 .trigger {
     @apply h-auto text-dark500_light700 body-semibold background-light800_dark200
-    flex w-auto items-center gap-1.5 border-light-800 px-2.5 py-4 dark:border-dark-300 outline-0;
+    flex w-auto items-center gap-1.5 border-light-800 px-2.5 py-4 dark:border-dark-300 focus:outline-none focus:ring-0 focus:ring-offset-0;
 
     :global(.lucide-chevron-down) {
         display: none;
