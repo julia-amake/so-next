@@ -1,0 +1,11 @@
+.outer {
+    @apply flex flex-wrap items-center gap-3;
+}
+
+.btn {
+    @apply text-light-500 py-3 px-6 body-medium background-light800_dark300 rounded-lg;
+}
+
+.btn_selected {
+    @apply bg-primary-100 dark:bg-dark-400;
+}
