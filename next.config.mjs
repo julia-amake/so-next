@@ -10,6 +10,14 @@ function hasGetLocalIdent(loader) {
 }
 
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+  },
   webpack: (config) => {
     // Workaround for Tailwind dark mode resolution with CSS Modules
     const rules = config.module.rules.find((r) => !!r.oneOf);
