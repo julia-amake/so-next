@@ -1,0 +1,19 @@
+.outer {
+    @apply max-w-[380px] m-auto text-center;
+}
+
+.pic {
+    @apply mx-auto mb-8;
+}
+
+.title {
+    @apply h2-bold;
+}
+
+.desc {
+    @apply mt-3.5 body-regular text-dark500_light700;
+}
+
+.btn {
+    @apply mx-auto block w-fit mt-3.5 bg-transparent py-3 px-7 primary-gradient rounded-lg text-light-900 paragraph-medium;
+}
