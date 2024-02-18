@@ -1,11 +1,20 @@
 'use client';
 
-import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import React, {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { Theme } from '@/types/theme';
 import { THEME_LS_KEY } from '@/constants/localStorage';
 
+type Mode = Exclude<Theme, 'system'>;
+
 interface ThemeContextType {
   theme: Theme;
+  mode?: Mode;
   setTheme: (theme: Theme) => void;
 }
 
@@ -19,6 +28,7 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
   const { children } = props;
 
   const [theme, setTheme] = useState<Theme>();
+  const [mode, setMode] = useState<Mode>();
 
   // set default theme
   useEffect(() => {
@@ -31,13 +41,14 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
     if (!theme) return;
     localStorage.setItem(THEME_LS_KEY, theme);
 
-    const mode: Exclude<Theme, 'system'> =
+    const mode: Mode =
       theme === 'system'
         ? window.matchMedia('(prefers-color-scheme: dark)').matches
           ? 'dark'
           : 'light'
         : theme;
 
+    setMode(mode);
     if (mode === 'light') {
       document.documentElement.classList.remove('dark');
     } else {
@@ -48,7 +59,11 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 
   if (!theme) return null;
 
-  return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={{ theme, mode, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 };
 
 export const useTheme = () => {
