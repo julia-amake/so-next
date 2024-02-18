@@ -16,7 +16,7 @@ function BaseLayout(props: BaseLayoutProps) {
       <div className="flex">
         <Sidebar />
         <main className="flex min-h-screen flex-1 flex-col pb-6 pt-36 max-lg:pt-32 max-md:pb-14 sm:px-14">
-          <div className="mx-auto w-full max-w-5xl">{children}</div>
+          <div className="mx-auto w-full max-w-5xl h-full">{children}</div>
         </main>
         <Aside />
       </div>

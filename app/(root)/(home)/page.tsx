@@ -7,7 +7,7 @@ import {
 
 const Home = () => {
   return (
-    <section>
+    <section className="flex h-full flex-col">
       <div className="mb-8 flex w-full flex-wrap justify-between gap-4 max-sm:flex-col-reverse sm:items-center">
         <h1 className="h1-bold max-sm:w-full">All Questions</h1>
         <Button asChild type={undefined}>
