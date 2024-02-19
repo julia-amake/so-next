@@ -4,6 +4,8 @@ import {
   QuestionsFilter,
   QuestionsSearch,
 } from '@/components/features/QuestionsSearch/ui';
+import { QuestionsList } from '@/components/features/QuestionsList';
+import { questions } from '@/app/(root)/(home)/mocks';
 
 const Home = () => {
   return (
@@ -23,6 +25,7 @@ const Home = () => {
         <QuestionsSearch />
         <QuestionsFilter />
       </div>
+      <QuestionsList questions={questions} />
     </section>
   );
 };

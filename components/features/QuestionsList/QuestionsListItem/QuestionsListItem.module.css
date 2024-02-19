@@ -1,0 +1,35 @@
+.outer {
+  @apply card-wrapper py-5 px-5 md:py-9 md:px-11 light-border border-1 rounded-[10px];
+}
+
+.titleWrapper {
+  @apply mb-3.5;
+}
+
+.title {
+  @apply h3-semibold max-sm:text-[16px] max-sm:leading-[22px];
+}
+
+.tags {
+  @apply mt-3.5 mb-6 flex flex-wrap gap-2;
+}
+
+.footer {
+  @apply flex justify-between min-[800px]:items-center mt-6 max-[799px]:flex-col gap-2.5;
+}
+
+.footerLeft {
+  @apply flex items-center gap-1;
+}
+
+.author {
+  @apply flex items-center gap-1 body-medium text-dark400_light700;
+}
+
+.date {
+  @apply relative top-[1px] small-regular text-dark400_light700;
+}
+
+.footerRight {
+  @apply flex items-center gap-2;
+}
