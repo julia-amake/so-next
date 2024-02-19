@@ -1,0 +1,15 @@
+.outer {
+    @apply flex items-center;
+}
+
+.icon {
+    @apply mr-0.5;
+}
+
+.value {
+    @apply mr-0.5 small-medium text-dark400_light800;
+}
+
+.title {
+    @apply small-regular text-dark400_light800;
+}
