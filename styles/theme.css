@@ -124,7 +124,7 @@
     }
 
     .h3-semibold {
-        @apply text-[20px] font-semibold leading-[24.8px];
+        @apply text-[20px] font-semibold leading-[30px];
     }
 
     .base-medium {

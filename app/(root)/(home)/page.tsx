@@ -19,7 +19,7 @@ const Home = () => {
           </Link>
         </Button>
       </div>
-      <div className="flex gap-7 max-sm:flex-col sm:items-stretch md:flex-col">
+      <div className="mb-10 flex gap-7 max-sm:flex-col sm:items-stretch md:flex-col">
         <QuestionsSearch />
         <QuestionsFilter />
       </div>
