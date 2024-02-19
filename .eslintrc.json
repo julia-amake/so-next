@@ -5,8 +5,16 @@
     "plugin:tailwindcss/recommended",
     "prettier"
   ],
+  "plugins": ["prettier"],
+  "root": true,
   "rules": {
     "semi": [2, "always"],
-    "no-unused-vars": ["warn"]
+    "no-unused-vars": ["warn"],
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }
