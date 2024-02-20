@@ -1,5 +1,10 @@
 export const compactNumber = (num: number): string => {
-  if (num < 1000) return String(num);
-  if (num < 1000000) return Math.round((num / 1000) * 10) / 10 + 'k';
-  return Math.round((num / 1000000) * 10) / 10 + 'm';
+  if (!num) return '0';
+  if ((num > 0 && num < 1000) || (num < 0 && num > -1000)) {
+    return String(Math.round(num));
+  }
+
+  return Intl.NumberFormat('en', { notation: 'compact' })
+    .format(num)
+    .toLowerCase();
 };
